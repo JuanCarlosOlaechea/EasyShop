@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EasyShop | Tienda Online</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #1f2937;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .producto {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .producto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .producto h3 {
+      margin: 10px 0 5px;
+    }
+    .precio {
+      font-weight: bold;
+      color: #16a34a;
+      margin-bottom: 10px;
+    }
+    button {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>EasyShop</h1>
+  <p>Tu tienda online para vender lo que quieras al mejor precio</p>
+</header>
+
+<section style="background:white; padding:20px; margin:20px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+  <h2>Sobre EasyShop</h2>
+  <p>Hola, soy la creadora de <strong>EasyShop</strong>. Esta es una <strong>tienda online peruana</strong> donde encontrar lo que quieres es fácil, y comprarlo también. Aquí podrás descubrir distintos productos a precios accesibles, todo en un solo lugar.</p>
+  <p><strong>Número de contacto:</strong> 927 724 379</p>
+</section>
+
+<main id="productos"></main>
+
+<footer>
+  <p>© 2026 EasyShop</p>
+</footer>
+
+<script>
+  const listaProductos = [
+    {
+      nombre: "Polo Oversize",
+      precio: 39.90,
+      imagen: "https://via.placeholder.com/300x200"
+    },
+    {
+      nombre: "Zapatillas Urbanas",
+      precio: 129.90,
+      imagen: "https://via.placeholder.com/300x200"
+    },
+    {
+      nombre: "Casaca",
+      precio: 89.90,
+      imagen: "https://via.placeholder.com/300x200"
+    }
+  ];
+
+  const contenedor = document.getElementById("productos");
+
+  listaProductos.forEach(producto => {
+    contenedor.innerHTML += `
+      <div class="producto">
+        <img src="${producto.imagen}" alt="${producto.nombre}">
+        <h3>${producto.nombre}</h3>
+        <div class="precio">S/ ${producto.precio}</div>
+        <button>Comprar</button>
+      </div>
+    `;
+  });
+</script>
+
+</body>
+</html>
